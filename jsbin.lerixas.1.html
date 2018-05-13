@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2018 by Balla1987 (http://jsbin.com/lerixas/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+<canvas id="myCanvas" height="300" width="450" style="border: 1px solid black">
+<script id="jsbin-javascript">
+var canvas = document.getElementById('myCanvas');
+var context = canvas.getContext('2d');
+
+numberOfSides = 3;
+size = 40;
+color = "#d91986";
+Xcenter = canvas.width/2;
+Ycenter = canvas.height/2;
+
+function triangleDrawer(Xcenter,Ycenter,size,color) {
+context.beginPath();
+context.moveTo (Xcenter, Ycenter);
+
+for (var i = 0; i <= numberOfSides;i += 1) {
+context.lineTo (Xcenter + size * Math.cos(i * 2 * Math.PI / numberOfSides-9.95), Ycenter + size * Math.sin(i * 2 * Math.PI / numberOfSides-9.95));
+}
+context.fillStyle = color;
+context.fill();
+}
+
+triangleDrawer(150,100,size,color);
+triangleDrawer(185,161,size,color="#26a415");
+triangleDrawer(115,161,size,color);
+triangleDrawer(80,221,size,color="#2854b6");
+triangleDrawer(150,221,size,color);
+triangleDrawer(220,221,size,color);
+
+
+ {}
+</script>
+</body>
+</html>
